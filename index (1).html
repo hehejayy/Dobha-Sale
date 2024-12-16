@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPL X DOBHA SALE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .page-break { display: block; page-break-before: always; }
+        }
+        body {
+            font-family: monospace;
+        }
+        #invoice-POS {
+            box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
+            padding: 2mm;
+            margin: 0 auto;
+            width: 44mm;
+            background: #FFF;
+        }
+        #invoice-POS h1, #invoice-POS h2, #invoice-POS h3 {
+            text-align: center;
+        }
+        #invoice-POS table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #invoice-POS .tabletitle {
+            font-size: 0.5em;
+            background: #EEE;
+        }
+        #invoice-POS .itemtext {
+            font-size: 0.5em;
+        }
+        #invoice-POS #legalcopy {
+            margin-top: 5mm;
+            font-size: 0.45em;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold text-center mb-4">RPL X DOBHA SALE</h1>
+            <!-- Produk Section -->
+            <div>
+                <h2 class="text-2xl font-semibold mb-3">Produk</h2>
+                <ul>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <!-- Product 1: Parfum Roll On -->
+                        <li class="bg-white p-4 rounded-lg shadow-md mb-4">
+                            <img src="https://i0.wp.com/www.dobha.com/wp-content/uploads/2021/02/dobha-parfum-6-ml-detail.png?w=504&ssl=1" alt="Parfum Roll On" class="w-32 h-32 object-cover mb-4 mx-auto">
+                            <h3 class="text-xl font-bold mb-2">Roll On</h3>
+                            <p class="text-gray-700 mb-4">
+                                <span class="line-through text-red-500">Rp15.000</span>
+                                <span class="text-black-500">Rp10.000</span>
+                            </p>
+                            <label for="aroma-roll-on" class="block text-sm font-medium text-gray-700 mb-2">Pilih Aroma</label>
+                            <select id="aroma-roll-on" class="w-full p-2 border border-gray-300 rounded-md mb-4">
+                                <option value="Aqua">Aqua</option>
+                                <option value="Zahrar Hawai">Zahrar Hawai</option>
+                                <option value="Soft Lovely">Soft Lovely</option>
+                                <option value="Blue Man">Blue Man</option>
+                                <option value="Bulgary Man">Bulgary Man</option>
+                                <option value="Dalat">Dalat</option>
+                                <option value="212 Vip Men">212 Vip Men</option>
+                                <option value="Secret Man">Secret Man</option>
+                                <option value="Kasthuri">Kasthuri</option>
+                                <option value="Aqua Kiss">Aqua Kiss</option>
+                                <option value="Selena Gomes">Selena Gomes</option>
+                                <option value="Scandalous">Scandalous</option>
+                                <option value="Paris Hilton">Paris Hilton</option>
+                                <option value="Baccarat">Baccarat</option>
+                                <option value="U2 Man">U2 Man</option>
+                                <option value="Ranarani">Ranarani</option>
+                                <option value="Concentrated">Concentrated</option>
+                                <option value="Vanilla Ice">Vanilla Ice</option>
+                                <option value="Vanilla">Vanilla</option>
+                                <option value="Grey">Grey</option>
+                                <option value="Jennifer Lovers">Jennifer Lovers</option>
+                                <option value="April">April</option>
+                            </select>
+                            <button onclick="addToCart('Parfum Roll On', 10000, 'aroma-roll-on')" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Tambah ke Keranjang
+                            </button>
+                        </li>
+                    </li>
+
+                    <!-- Product 2: Parfum Pen Spray -->
+                    <li class="bg-white p-4 rounded-lg shadow-md mb-4">
+                        <img src="https://i0.wp.com/www.dobha.com/wp-content/uploads/2021/02/dobha-parfum-8-ml-detail.png?w=504&ssl=1" alt="Parfum Pen Spray" class="w-32 h-32 object-cover mb-4 mx-auto">
+                        <h3 class="text-xl font-bold mb-2">Pen Spray</h3>
+                        <p class="text-gray-700 mb-4">
+                            <span class="line-through text-red-500">Rp15.000</span>
+                            <span class="text-black-500">Rp10.000</span>
+                        </p>
+                        <label for="aroma-pen-spray" class="block text-sm font-medium text-gray-700 mb-2">Pilih Aroma</label>
+                        <select id="aroma-pen-spray" class="w-full p-2 border border-gray-300 rounded-md mb-4">
+                            <option value="Lovely">Lovely</option>
+                            <option value="U2 Man">U2 Man</option>
+                            <option value="Zahrat Hawai">Zahrat Hawai</option>
+                            <option value="Ranarani">Ranarani</option>
+                            <option value="April">April</option>
+                            <option value="Sabaya">Sabaya</option>
+                            <option value="Baccarat">Baccarat</option>
+                            <option value="Soft">Soft</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Red Rose">Red Rose</option>
+                        </select>
+                        <button onclick="addToCart('Parfum Pen Spray', 10000, 'aroma-pen-spray')" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Tambah ke Keranjang
+                        </button>
+                    </li>
+
+                    <!-- Product 3: Pocket Spray -->
+                    <li class="bg-white p-4 rounded-lg shadow-md mb-4">
+                        <img src="https://i0.wp.com/www.dobha.com/wp-content/uploads/2021/02/dobha-parfum-18-ml-detail.png?w=504&ssl=1" alt="Pocket Spray" class="w-32 h-32 object-cover mb-4 mx-auto">
+                        <h3 class="text-xl font-bold mb-2">Pocket Spray</h3>
+                        <p class="text-gray-700 mb-4">
+                            <span class="line-through text-red-500">Rp20.000</span>
+                            <span class="text-black-500">Rp15.000</span>
+                        </p>
+                        <label for="aroma-pocket-spray" class="block text-sm font-medium text-gray-700 mb-2">Pilih Aroma</label>
+                        <select id="aroma-pocket-spray" class="w-full p-2 border border-gray-300 rounded-md mb-4">
+                            <option value="U2 Man">U2 Man</option>
+                            <option value="Secret Man">Secret Man</option>
+                            <option value="Bali">Bali</option>
+                            <option value="Lovely">Lovely</option>
+                            <option value="Man Extreme">Man Extreme</option>
+                            <option value="Dakar">Dakar</option>
+                            <option value="Cherry Flower">Cherry Flower</option>
+                            <option value="Silver">Silver</option>
+                            <option value="April">April</option>
+                            <option value="Soft">Soft</option>
+                            <option value="Inspiration">Inspiration</option>
+                            <option value="Red Rose">Red Rose</option>
+                            <option value="Ranarani">Ranarani</option>
+                            <option value="Dalal">Dalal</option>
+                        </select>
+                        <button onclick="addToCart('Pocket Spray', 15000, 'aroma-pocket-spray')" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Tambah ke Keranjang
+                        </button>
+                    </li>
+
+                    <!-- Product 4: 35ml Spray -->
+                    <li class="bg-white p-4 rounded-lg shadow-md mb-4">
+                        <img src="https://i0.wp.com/www.dobha.com/wp-content/uploads/2021/02/dobha-parfum-35-ml-detail.png?w=504&ssl=1" alt="35ml Spray" class="w-32 h-32 object-cover mb-4 mx-auto">
+                        <h3 class="text-xl font-bold mb-2">35ml Spray</h3>
+                        <p class="text-gray-700 mb-4">
+                            <span class="line-through text-red-500">Rp35.000</span>
+                            <span class="text-black-500">Rp30.000</span>
+                        </p>
+                        <label for="aroma-35ml-spray" class="block text-sm font-medium text-gray-700 mb-2">Pilih Aroma</label>
+                        <select id="aroma-35ml-spray" class="w-full p-2 border border-gray-300 rounded-md mb-4">
+                            <option value="Zahrat Hawai">Zahrat Hawai</option>
+                            <option value="April">April</option>
+                            <option value="Sexy Grafiti">Sexy Grafiti</option>
+                            <option value="Lovely">Lovely</option>
+                            <option value="Ranarani">Ranarani</option>
+                            <option value="Call Me">Call Me</option>
+                            <option value="212 Vip Men">212 Vip Men</option>
+                            <option value="U2 Man">U2 Man</option>
+                            <option value="Aqua Kiss">Aqua Kiss</option>
+                            <option value="Golden Sand">Golden Sand</option>
+                            <option value="Vanilla Ice">Vanilla Ice</option>
+                            <option value="Maher Zain">Maher Zain</option>
+                        </select>
+                        <button onclick="addToCart('35ml Spray', 30000, 'aroma-35ml-spray')" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Tambah ke Keranjang
+                        </button>
+                    </li>
+
+                    <!-- Product 5: 55ml Spray -->
+                    <li class="bg-white p-4 rounded-lg shadow-md mb-4">
+                        <img src="https://i0.wp.com/www.dobha.com/wp-content/uploads/2024/02/bacarrat-55-ml.png?w=1000&ssl=1" alt="55ml Spray" class="w-32 h-32 object-cover mb-4 mx-auto">
+                        <h3 class="text-xl font-bold mb-2">55ml Spray</h3>
+                        <p class="text-gray-700 mb-4">
+                            <span class="line-through text-red-500">Rp50.000</span>
+                            <span class="text-black-500">Rp40.000</span>
+                        </p>
+                        <label for="aroma-55ml-spray" class="block text-sm font-medium text-gray-700 mb-2">Pilih Aroma</label>
+                        <select id="aroma-55ml-spray" class="w-full p-2 border border-gray-300 rounded-md mb-4">
+                            <option value="Dalal">Dalal</option>
+                            <option value="Sultan">Sultan</option>
+                            <option value="Soft">Soft</option>
+                            <option value="Scandalous">Scandalous</option>
+                            <option value="U2 Man">U2 Man</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Baccarat">Baccarat</option>
+                            <option value="Sabaya">Sabaya</option>
+                            <option value="Lovely">Lovely</option>
+                            <option value="Zahrat Hawai">Zahrat Hawai</option>
+                            <option value="Ranarani">Ranarani</option>
+                        </select>
+                        <button onclick="addToCart('55ml Spray', 40000, 'aroma-55ml-spray')" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Tambah ke Keranjang
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Cart Section -->
+            <div id="cart-section" class="hidden mt-8 bg-white p-4 rounded-lg shadow-md col-span-1 md:col-span-2">
+                <h2 class="text-2xl font-semibold mb-4">Keranjang</h2>
+                <ul id="cart" class="mb-4"></ul>
+                <div class="flex justify-between items-center">
+                    <span class="font-semibold">Total:</span>
+                    <span id="total" class="font-semibold text-xl">Rp0</span>
+                </div>
+                <form onsubmit="printInvoice(event)" class="mt-4">
+                    <div class="mb-3">
+                        <label for="customer-name" class="block text-sm font-medium text-gray-700">Nama Pelanggan</label>
+                        <input id="customer-name" type="text" class="w-full mt-1 p-2 border rounded focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount-paid" class="block text-sm font-medium text-gray-700">Jumlah Dibayar</label>
+                        <input id="amount-paid" type="number" class="w-full mt-1 p-2 border rounded focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        Cetak Faktur
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(productName, productPrice, aromaId) {
+            const aroma = document.getElementById(aromaId).value;
+            cart.push({ name: `${productName} (${aroma})`, price: productPrice });
+            total += productPrice;
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartElement = document.getElementById('cart');
+            const cartSection = document.getElementById('cart-section');
+            cartElement.innerHTML = '';
+            cart.forEach((item) => {
+                const li = document.createElement('li');
+                li.className = "flex justify-between items-center";
+                li.innerHTML = ` 
+                    <span>${item.name}</span>
+                    <span>Rp${item.price.toLocaleString('id-ID')}</span>
+                `;
+                cartElement.appendChild(li);
+            });
+            document.getElementById('total').textContent = total.toLocaleString('id-ID');
+            cartSection.classList.remove('hidden');
+        }
+
+        function printInvoice(event) {
+            event.preventDefault();
+
+            const customerName = document.getElementById('customer-name').value;
+            const amountPaid = parseFloat(document.getElementById('amount-paid').value);
+            const change = amountPaid - total;
+
+            if (change < 0) {
+                alert('Jumlah yang dibayar kurang!');
+                return;
+            }
+
+            const invoiceWindow = window.open('', '_blank');
+            invoiceWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Invoice</title>
+                    <style>
+                        ${document.querySelector('style').textContent}
+                    </style>
+                </head>
+                <body>
+                    <div id="invoice-POS">
+                        <center id="top">
+                            <div class="info"> 
+                                <h2>INVOICE</h2>
+                                <p>Nota Pembayaran<br><hr></p>
+                            </div>
+                        </center>
+                        <div id="mid">
+                            <div class="info">
+                                <p> 
+                                    Nama: ${customerName}<br>
+                                </p>
+                            </div>
+                        </div>
+                        <div id="bot">
+                            <div id="table">
+                                <table>
+                                    <tr class="tabletitle">
+                                        <td class="item"><h2>Produk</h2></td>
+                                        <td class="Rate"><h2>Harga</h2></td>
+                                    </tr>
+                                    ${cart.map(item => `
+                                    <tr class="service">
+                                        <td class="tableitem"><p class="itemtext">${item.name}</p></td>
+                                        <td class="tableitem"><p class="itemtext">Rp${item.price.toLocaleString('id-ID')}</p></td>
+                                    </tr>`).join('')}
+                                    <tr class="tabletitle">
+                                        <td class="Rate"><h2>Total</h2></td>
+                                        <td class="payment"><h2>Rp${total.toLocaleString('id-ID')}</h2></td>
+                                    </tr>
+                                    <tr class="tabletitle">
+                                        <td class="Rate"><h2>Dibayar</h2></td>
+                                        <td class="payment"><h2>Rp${amountPaid.toLocaleString('id-ID')}</h2></td>
+                                    </tr>
+                                    <tr class="tabletitle">
+                                        <td class="Rate"><h2>Kembalian</h2></td>
+                                        <td class="payment"><h2>Rp${change.toLocaleString('id-ID')}</h2></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="legalcopy">
+                                <p class="legal"><strong>Terimakasih Telah Berbelanja Di RPL X DOBHA!</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+                </html>
+            `);
+            invoiceWindow.document.close();
+            invoiceWindow.print();
+        }
+    </script>
+</body>
+</html>
